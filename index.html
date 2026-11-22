@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melissa's Portrait</title>
+    <style>
+        :root {
+            --page-background: #f7f4f8;
+            --image-border: #74450e;
+            --button-background: #704786;
+            --button-hover: #58366c;
+            --image-size: min(440px, 65vw);
+            --image-radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            padding: 32px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            font-family: Arial, sans-serif;
+            background: #674002 url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGJG7xpYlRMhkC24O-o5hJwbTICSGgPoh95cC9rhaOPQ&s') repeat fixed;
+        }
+
+        h1 {
+            color: #783711da;
+            margin: 0;
+            padding: 10px 0;
+            font-size: 30px;
+            font-weight: 700;
+            text-shadow: 0 1px 1px rgb(60, 39, 4);
+        }
+
+        h3 {
+            color: #783711da;
+            margin: 0;
+            padding: 10px 0;
+            font-size: 20px;
+            font-weight: 700;
+            text-shadow: 0 1px 1px rgb(60, 39, 4);
+            ;
+        }
+
+        #image-holder {
+            width: var(--image-size);
+            aspect-ratio: 1;
+            display: block;
+            border: 2px solid var(--image-border);
+            /*border-radius: var(--image-radius);*/
+            background: #fff;
+            object-fit: cover;
+        }
+
+        #image-holder.glitter-shadow {
+            filter: drop-shadow(0 0 10px white);
+        }
+
+        /* Button styles */
+        #change-image {
+            padding: 14px 20px;
+            border: 0;
+            border-radius: 50px;
+            color: white;
+            text-shadow: 0 1px 1px rgb(60, 39, 4);
+            font-size: 1rem;
+            cursor: pointer;
+            background: linear-gradient(to bottom, #865922 0%,#674417 50%,#4e3310 51%,#7a521e 100%);
+        }
+
+        #change-image:hover {
+            filter: brightness(1.4);
+            transform: scale(0.95);
+        }
+
+        @media (max-width: 600px) {
+            body {
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            #image-holder {
+                width: min(100%, 360px);
+            }
+        }
+
+        .floating-cats {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 9999;
+        }
+
+        .floating-cats img {
+            width: 600px;
+            height: auto;
+            opacity: 0.95;
+
+        }
+
+        .floating-cats img {
+            width: 420px;
+        }
+
+        .floating-gems {
+            position: fixed;
+            bottom: 220px;
+            left: 20%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 9999;
+            rotate: 90deg;
+        }
+
+        .floating-gems img {
+            width: 600px;
+            height: auto;
+            opacity: 0.95;
+
+        }
+
+        .floating-gems img {
+            width: 90px;
+        }
+
+        .floating-braclet {
+            position: fixed;
+            bottom: 390px;
+            right: 25%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 9999;
+        }
+
+        .floating-braclet img {
+            width: 600px;
+            height: auto;
+            opacity: 0.95;
+
+        }
+
+        .floating-braclet img {
+            width: 180px;
+        }
+
+        .floating-paper {
+            position: fixed;
+            bottom: 1px;
+            right: 1%;
+            transform: translateX(5%);
+            display: flex;
+            gap: 20px;
+            z-index: 9999;
+        }
+
+        .floating-paper img {
+            width: 600px;
+            height: auto;
+            opacity: 0.95;
+
+        }
+
+        .floating-paper img {
+            width: 380px;
+        }
+
+        .floating-butterfly {
+            position: fixed;
+            top: 1px;
+            left: -1%;
+            /*transform: translateX(5%);*/
+            display: flex;
+            gap: 20px;
+            z-index: 9999;
+        }
+
+        .floating-butterfly img {
+            width: 600px;
+            height: auto;
+            opacity: 0.95;
+
+        }
+
+        .floating-butterfly img {
+            width: 180px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="floating-gems">
+        <img src="https://file.garden/Zj8MKPoh-G9Y8EJE/pngsgifs/pngs/IMG_6869.png">
+    </div>
+
+    <h1>⋆ My self portrait</h1>
+
+    <img id="image-holder" alt="Portrait">
+    <button id="change-image" type="button">on</button>
+    <h3>Click the button <br> to turn on the light!</h3>
+
+    <div class="floating-braclet">
+        <img src="https://file.garden/Zj8MKPoh-G9Y8EJE/pngsgifs/pngs2/29m7fy.png">
+    </div>
+
+    <div class="floating-paper">
+        <img src="https://file.garden/Zj8MKPoh-G9Y8EJE/pngsgifs/pngs2/w0239w.png">
+    </div>
+
+    <div class="floating-butterfly">
+        <img src="https://file.garden/Zj8MKPoh-G9Y8EJE/pngsgifs/pngs2/v0wk39.png">
+    </div>
+
+    <!-- Floating pics -->
+    <div class="floating-cats">
+        <img src="https://wilardo.crd.co/assets/images/gallery05/4e83b748.gif?v=f38baa4b">
+        <img src="https://wilardo.crd.co/assets/images/gallery05/4e83b748.gif?v=f38baa4b">
+    </div>
+
+    <script>
+        const imageUrls = [
+            "images/normalpic.jpg",
+            "images/glitterpic.gif",
+        ];
+        const image = document.getElementById('image-holder');
+        const button = document.getElementById('change-image');
+        let currentImage = 0;
+
+        image.src = imageUrls[currentImage];
+        button.textContent = currentImage === 0 ? 'on' : 'off';
+
+        button.addEventListener('click', () => {
+            currentImage = (currentImage + 1) % imageUrls.length;
+            image.src = imageUrls[currentImage];
+            image.classList.toggle('glitter-shadow', currentImage === 1);
+            button.textContent = currentImage === 0 ? 'on' : 'off';
+        });
+    </script>
+
+</body>
+
+</html>
